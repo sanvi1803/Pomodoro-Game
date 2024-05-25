@@ -15,12 +15,11 @@ window.onload = () => {
 
 // start timer
 function start() {
-
     // change button
     document.getElementById('start').style.display = "none";
     document.getElementById('reset').style.display = "block";
+    
     // change time
-
     seconds = 59;
 
     let workMinutes = workTime - 1;
@@ -35,10 +34,10 @@ function start() {
         document.getElementById('minutes').innerHTML = workMinutes;
         document.getElementById('seconds').innerHTML = seconds;
 
-        seconds  = seconds - 1;
+        seconds = seconds - 1;
 
-        if(seconds === 0){
-            workMinutes = workMinutes-1;
+        if (seconds === 0) {
+            workMinutes = workMinutes - 1;
             if (workMinutes == -1) {
                 if (breakCount % 2 == 0) {
                     // start count
@@ -49,7 +48,7 @@ function start() {
                     worktitle.classList.remove('active');
                     breaktitle.classList.add('active');
                 }
-                else{
+                else {
                     // continue work
                     workMinutes = workTime;
                     breakCount++;
@@ -57,7 +56,7 @@ function start() {
                     // change panel
                     breaktitle.classList.remove('active');
                     worktitle.classList.add('active');
-                    
+
                 }
             }
             seconds = 59
